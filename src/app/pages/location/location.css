@@ -1,0 +1,55 @@
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+.form-alta {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #f4f4f4;
+  border-radius: 8px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  flex: 1;
+}
+
+.btn-guardar {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.tabla-datos {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-datos th, .tabla-datos td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.btn-borrar {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+#map {
+  height: 500px;
+  width: 100%;
+  border: 2px solid #333;
+  border-radius: 12px;
+}

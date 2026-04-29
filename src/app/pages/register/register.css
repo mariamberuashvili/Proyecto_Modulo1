@@ -1,0 +1,28 @@
+input {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  width: 53%;
+  padding: 12px;
+  background: #3880ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #3171e0;
+}
+p {
+  text-align: center;
+  margin-top: 16px;
+}

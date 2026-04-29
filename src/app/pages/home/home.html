@@ -1,0 +1,49 @@
+<h1>🥩 Steak Shop</h1>
+ 
+<div class="top-actions">
+
+  <button (click)="clearCart()">Clear Cart</button>
+
+  <button class="logout-btn" (click)="logout()">
+    Logout
+  </button>
+
+</div>
+
+
+<div class="cart">
+  🛒 Items: {{ cartItems }} <br>
+  💰 Total: {{ totalPrice | number:'1.2-2' }} €
+</div>
+
+
+
+<div class="grid">
+
+  <div class="card" *ngFor="let s of steaks">
+
+    <h2>{{ s.tipo }}</h2>
+
+    <p>Origin: {{ s.origen }}</p>
+    <p>Weight: {{ s.peso }} kg</p>
+    <p>Price: {{ s.precio }} €</p>
+
+    <div class="actions">
+
+      <button (click)="removeFromCart(s)">-</button>
+
+      <span>{{ s.cantidad }}</span>
+
+      <button (click)="addToCart(s)">+</button>
+
+    </div>
+
+  </div>
+  
+
+</div>
+
+<p>
+  Don't have an location? I can help you with that too!
+  <a routerLink="/location">Find a location near you</a>
+</p>
