@@ -1,0 +1,11 @@
+{
+  "/api-amb": {
+    "target": "https://www.ambmobilitat.cat",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/api-amb": ""
+    }
+  }
+}

@@ -1,14 +1,30 @@
-<input #name type="text" placeholder="Your Name"><br>
+<h1>Register</h1>
 
-<input #email type="email" placeholder="user@example.com"><br>
+<form (submit)="register(name.value, email.value, password.value, confirmPassword.value)">
 
-<input #password type="password" placeholder="Password"><br>
+  <div class="field">
+    <label for="name">Name</label>
+    <input #name id="name" type="text" placeholder="Your Name">
+  </div>
 
-<input #confirmPassword type="password" placeholder="Confirm Password"><br>
+  <div class="field">
+    <label for="email">Email</label>
+    <input #email id="email" type="email" placeholder="user@example.com">
+  </div>
 
-<button (click)="register(name.value, email.value, password.value, confirmPassword.value)">
-  Register
-</button>
+  <div class="field">
+    <label for="password">Password</label>
+    <input #password id="password" type="password" placeholder="Password">
+  </div>
+
+  <div class="field">
+    <label for="confirm">Confirm</label>
+    <input #confirmPassword id="confirm" type="password" placeholder="Confirm Password">
+  </div>
+
+  <button type="submit">Register</button>
+
+</form>
 
 <p>
   Already have an account?

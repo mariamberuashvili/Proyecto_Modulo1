@@ -14,7 +14,9 @@ export class AuthService {
 
   constructor(private auth: Auth) {}
 
-  async register({ email, password }: { email: string; password: string }) {
+  async register(
+    { email, password }: { email: string; password: string }
+  ): Promise<UserCredential | null> {
     try {
       const user = await createUserWithEmailAndPassword(this.auth, email, password);
 
@@ -22,13 +24,15 @@ export class AuthService {
       localStorage.setItem('token', token);
 
       return user;
-    } catch (e) {
+    } catch (e: unknown) {
       console.error('Register error:', e);
       return null;
     }
   }
 
-  async login({ email, password }: { email: string; password: string }) {
+  async login(
+    { email, password }: { email: string; password: string }
+  ): Promise<UserCredential | null> {
     try {
       const user = await signInWithEmailAndPassword(this.auth, email, password);
 
@@ -36,13 +40,13 @@ export class AuthService {
       localStorage.setItem('token', token);
 
       return user;
-    } catch (e: any) {
-      console.error('Firebase error:', e.code, e.message);
+    } catch (e: unknown) {
+      console.error('Firebase error:', e);
       return null;
     }
   }
 
-  async logout() {
+  async logout(): Promise<void> {
     return await signOut(this.auth);
   }
 }

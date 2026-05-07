@@ -9,6 +9,6 @@ export interface Chuleton {
 export interface User {
     id: number;
     nombre: string;
-    email: string;
+    email: string | null;
     password: string;
 }

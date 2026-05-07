@@ -13,7 +13,7 @@ export class Register {
   private authService = inject(AuthService);
   private router = inject(Router);
 
-  async register(name: any, email: any, pass: any, confirm: any) {
+  async register(name: string, email: string, pass: string, confirm: string) {
   
     if (!name || !email || !pass) {
       alert("Por favor, rellena todos los campos");
@@ -37,14 +37,10 @@ export class Register {
       } else {
         alert("Error: No se pudo crear el usuario.");
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error(error);
-      // Manejo de errores de Firebase
-      if (error.code === 'auth/email-already-in-use') {
-        alert("Este correo ya está en uso.");
-      } else {
-        alert("Ocurrió un error inesperado.");
-      }
+     
+      
     }
   }
 }
