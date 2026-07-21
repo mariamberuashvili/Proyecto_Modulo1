@@ -20,13 +20,13 @@ export const appConfig: ApplicationConfig = {
 
     provideFirebaseApp(() =>
   initializeApp({
-    apiKey: "AIzaSyDbU4OLAwpBqj9od5QIyjp584cyrwjXXbI",
-    authDomain: "del-test-fundesplai.firebaseapp.com",
-    projectId: "del-test-fundesplai",
-    storageBucket: "del-test-fundesplai.appspot.com",
-    messagingSenderId: "11717140564",
-    appId: "1:11717140564:web:4f6ceae6ce8a20dc5b4dc1",
-    measurementId: "G-Y295ZNH0RH"
+     apiKey: "AIzaSyAsljVre6iFAfKyzKiLEtRkMN1ukkwi3wc",
+  authDomain: "modulo-c1980.firebaseapp.com",
+  projectId: "modulo-c1980",
+  storageBucket: "modulo-c1980.firebasestorage.app",
+  messagingSenderId: "936365011803",
+  appId: "1:936365011803:web:77400c0aaeaa8f5059207e",
+  measurementId: "G-J46B5J7L96"
   })
 ),
 
