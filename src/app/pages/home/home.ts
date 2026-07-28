@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Chuleton } from '../../models/interfaces';
 import { AuthService } from '../../services/auth';
+import { UserService } from '../../services/user';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({
@@ -43,14 +44,12 @@ export class Home {
     this.totalPrice = 0;
   }
    private authService = inject(AuthService);
+  private userService = inject(UserService);
   private router = inject(Router);
 
   async logout() {
     await this.authService.logout();
-
-    
-    localStorage.removeItem('token');
-
+    this.userService.clearToken();
     await this.router.navigateByUrl('/login', { replaceUrl: true });
   }
 }

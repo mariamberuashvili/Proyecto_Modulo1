@@ -18,12 +18,7 @@ export class AuthService {
     { email, password }: { email: string; password: string }
   ): Promise<UserCredential | null> {
     try {
-      const user = await createUserWithEmailAndPassword(this.auth, email, password);
-
-      const token = await user.user.getIdToken();
-      localStorage.setItem('token', token);
-
-      return user;
+      return await createUserWithEmailAndPassword(this.auth, email, password);
     } catch (e: unknown) {
       console.error('Register error:', e);
       return null;
@@ -34,12 +29,7 @@ export class AuthService {
     { email, password }: { email: string; password: string }
   ): Promise<UserCredential | null> {
     try {
-      const user = await signInWithEmailAndPassword(this.auth, email, password);
-
-      const token = await user.user.getIdToken();
-      localStorage.setItem('token', token);
-
-      return user;
+      return await signInWithEmailAndPassword(this.auth, email, password);
     } catch (e: unknown) {
       console.error('Firebase error:', e);
       return null;

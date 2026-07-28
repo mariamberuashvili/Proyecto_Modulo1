@@ -6,11 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class Transporte {
-  getTrips(origenUsuario: [number, number], destino: [number, number]) {
-    throw new Error('Method not implemented.');
-  }
-
-private urlBase = '/api-amb/transit/trips-updates/trips.bin';
+  private urlBase = '/api-amb/transit/trips-updates/trips.bin';
   constructor(private http: HttpClient) {}
 
   getTripsBinary(): Observable<ArrayBuffer> {

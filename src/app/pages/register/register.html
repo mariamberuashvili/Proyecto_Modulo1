@@ -1,6 +1,6 @@
 <h1>Register</h1>
 
-<form (submit)="register(name.value, email.value, password.value, confirmPassword.value)">
+<form (submit)="$event.preventDefault(); register(name.value, email.value, password.value, confirmPassword.value)">
 
   <div class="field">
     <label for="name">Name</label>

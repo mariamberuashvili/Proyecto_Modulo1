@@ -6,9 +6,3 @@ export interface Chuleton {
     peso: number;
     cantidad: number;
 }
-export interface User {
-    id: number;
-    nombre: string;
-    email: string | null;
-    password: string;
-}
