@@ -16,23 +16,29 @@ export class AuthService {
 
   async register(
     { email, password }: { email: string; password: string }
-  ): Promise<UserCredential | null> {
+  ): Promise<UserCredential> {
     try {
       return await createUserWithEmailAndPassword(this.auth, email, password);
-    } catch (e: unknown) {
-      console.error('Register error:', e);
-      return null;
+    } catch (e: any) {
+      alert(
+        `Código: ${e.code}\n\nMensaje: ${e.message}`
+      );
+      console.error(e);
+      throw e;
     }
   }
 
   async login(
     { email, password }: { email: string; password: string }
-  ): Promise<UserCredential | null> {
+  ): Promise<UserCredential> {
     try {
       return await signInWithEmailAndPassword(this.auth, email, password);
-    } catch (e: unknown) {
-      console.error('Firebase error:', e);
-      return null;
+    } catch (e: any) {
+      alert(
+        `Código: ${e.code}\n\nMensaje: ${e.message}`
+      );
+      console.error(e);
+      throw e;
     }
   }
 
